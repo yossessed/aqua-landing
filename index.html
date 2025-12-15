@@ -1,98 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$AQUA — The Waterbearer’s Token</title>
-  <style>
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQUA — The Waterbearer’s Token</title>
+    <style>
+      /* 전체 배경을 로고 색과 동일하게 */
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #3fa6ab; /* ✅ 로고 배경색으로 설정 (teal 계열) */
+        color: #e8f6f7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        text-align: center;
+      }
 
-    @keyframes floatLogo {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
+      .logo {
+        margin-top: 60px;
+        background-color: transparent; /* 로고 주변 배경 투명하게 */
+      }
 
-    @keyframes rippleButton {
-      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-      70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-    }
+      .logo img {
+        width: 120px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(-45deg, #00b8a9, #007f87, #0096a3, #00b3b0);
-      background-size: 400% 400%;
-      animation: gradientFlow 10s ease infinite;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
-    }
+      h1 {
+        color: #eaf7f8;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-top: 30px;
+        font-size: 2rem;
+        font-weight: 700;
+      }
 
-    img {
-      width: 200px;
-      height: auto;
-      margin-bottom: 30px;
-      animation: floatLogo 4s ease-in-out infinite;
-    }
+      p {
+        max-width: 700px;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding: 16px 24px;
+        border-radius: 10px;
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #f2fdfd;
+      }
 
-    h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      letter-spacing: 1px;
-    }
+      .cta {
+        margin-top: 30px;
+      }
 
-    p {
-      max-width: 650px;
-      line-height: 1.6;
-      font-size: 1.15rem;
-      margin: 25px auto;
-    }
+      .cta a {
+        background-color: #e8f6f7;
+        color: #15777b;
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
 
-    button {
-      margin-top: 30px;
-      background: white;
-      color: #007f87;
-      border: none;
-      padding: 14px 32px;
-      border-radius: 40px;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: transform 0.3s;
-      animation: rippleButton 2s infinite;
-    }
+      .cta a:hover {
+        background-color: #ffffff;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
 
-    button:hover {
-      transform: scale(1.07);
-    }
+  <body>
+    <div class="logo">
+      <img src="Aquarius.png" alt="AQUA Logo" />
+    </div>
 
-    footer {
-      position: absolute;
-      bottom: 25px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-<body>
-  <img src="Aquarious.png" alt="$AQUA logo">
-  <h1>$AQUA — The Waterbearer’s Token</h1>
-  <p>
-    The old financial Pisces age is over. Aquarius has arrived, bringing decentralization, fluidity, and a sense of cosmic freedom.
-    $AQUA is not just a token — it’s a living current flowing through the blockchain, powered by laughter, liquidity, and the collective spirit of the Waterbearers.
-    Every ripple, every meme, every drop contributes to rebalancing the universe through humor and connection.
-  </p>
-  <button>Join the Flow</button>
-  <footer>© 2025 Age of Aquarius DAO — Stay Hydrated, Stay Decentralized ♒️</footer>
-</body>
+    <h1>AQUA — The Waterbearer’s Token</h1>
+
+    <p>
+      The old financial Pisces age is over. Aquarius has arrived, bringing
+      decentralization, fluidity, and a sense of cosmic freedom. $AQUA is not
+      just a token — it’s a living current flowing through the blockchain,
+      powered by laughter, liquidity, and the collective spirit of the
+      Waterbearers. Every ripple, every meme, every drop contributes to
+      rebalancing the universe through humor and connection.
+    </p>
+
+    <div class="cta">
+      <a href="#">Join the Flow</a>
+    </div>
+  </body>
 </html>
