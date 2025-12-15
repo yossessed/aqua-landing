@@ -1,100 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AQUA — The Waterbearer’s Token</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$AQUA - The Cosmic Current</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-      /* 전체 배경을 로고 색과 동일하게 */
-      body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background-color: #3fa6ab; /* ✅ 로고 배경색으로 설정 (teal 계열) */
-        color: #e8f6f7;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 100vh;
-        text-align: center;
-      }
+        /* 기본 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      .logo {
-        margin-top: 60px;
-        background-color: transparent; /* 로고 주변 배경 투명하게 */
-      }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: white;
+            overflow-x: hidden;
+            background-color: #001a33;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
 
-      .logo img {
-        width: 120px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
+        /* 배경: 심해 느낌의 이미지와 그라데이션 오버레이 */
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                linear-gradient(to bottom, rgba(0, 40, 80, 0.6), rgba(0, 10, 30, 0.9)),
+                url('https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=2832&auto=format&fit=crop') no-repeat center center/cover;
+            /* 물결 효과 애니메이션 */
+            animation: pulseBackground 10s infinite alternate;
+        }
 
-      h1 {
-        color: #eaf7f8;
-        background-color: rgba(255, 255, 255, 0.15);
-        padding: 8px 16px;
-        border-radius: 8px;
-        margin-top: 30px;
-        font-size: 2rem;
-        font-weight: 700;
-      }
+        @keyframes pulseBackground {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
 
-      p {
-        max-width: 700px;
-        background-color: rgba(255, 255, 255, 0.15);
-        padding: 16px 24px;
-        border-radius: 10px;
-        line-height: 1.6;
-        font-size: 1rem;
-        color: #f2fdfd;
-      }
+        /* 왼쪽 상단 로고 영역 */
+        header {
+            padding: 30px 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
 
-      .cta {
-        margin-top: 30px;
-      }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-      .cta a {
-        background-color: #e8f6f7;
-        color: #15777b;
-        text-decoration: none;
-        padding: 12px 28px;
-        border-radius: 50px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-      }
+        .logo-img {
+            width: 85px; 
+            height: 85px;
+            /* 배경색(흰색 동그라미) 제거됨 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .cta a:hover {
-        background-color: #ffffff;
-        transform: scale(1.05);
-      }
+        /* 이미지 파일 스타일링 */
+        .logo-img img {
+            width: 100%; /* 원이 없어졌으므로 꽉 차게 표시 */
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* 메인 콘텐츠 */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* 타이틀 $AQUA */
+        h1 {
+            font-size: 8rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(100, 200, 255, 0.6);
+            background: linear-gradient(to bottom, #ffffff, #a2d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        /* 서브 타이틀 */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #dbeeff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 0.3s forwards;
+        }
+
+        /* 본문 텍스트 */
+        .description {
+            max-width: 800px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0f0ff;
+            margin-bottom: 60px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 0.6s forwards;
+        }
+
+        /* 버튼 */
+        .cta-button {
+            padding: 15px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #003355;
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 0.9s forwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            background-color: #f0f8ff;
+        }
+
+        /* 애니메이션 정의 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 1.5rem; }
+            .description { font-size: 0.95rem; padding: 0 20px; }
+            header { padding: 20px; }
+        }
     </style>
-  </head>
+</head>
+<body>
 
-  <body>
-    <div class="logo">
-      <img src="Aquarius.png" alt="AQUA Logo" />
-    </div>
+    <div class="background-container"></div>
 
-    <h1>AQUA — The Waterbearer’s Token</h1>
+    <header>
+        <div class="logo-container">
+            <div class="logo-img">
+                <img src="Aquarius.png" alt="Aquarius Logo">
+            </div>
+        </div>
+    </header>
 
-    <p>
-      The old financial Pisces age is over. Aquarius has arrived, bringing
-      decentralization, fluidity, and a sense of cosmic freedom. $AQUA is not
-      just a token — it’s a living current flowing through the blockchain,
-      powered by laughter, liquidity, and the collective spirit of the
-      Waterbearers. Every ripple, every meme, every drop contributes to
-      rebalancing the universe through humor and connection.
-    </p>
+    <main>
+        <h1>$AQUA</h1>
+        <h2>The Current of Cosmic Freedom</h2>
+        
+        <p class="description">
+            The old financial Pisces age is over. Aquarius has arrived, bringing decentralization, fluidity, and a sense of cosmic freedom. 
+            $AQUA is not just a token, it’s a living current flowing through the blockchain, powered by laughter, liquidity, and the collective spirit of the Waterbearers. 
+            Every ripple, every meme, every drop contributes to rebalancing the universe through humor and connection.
+        </p>
 
-    <div class="cta">
-      <a href="#">Join the Flow</a>
-    </div>
-  </body>
+        <a href="#" class="cta-button">
+            JOIN THE CURRENT <i class="fa-solid fa-water"></i>
+        </a>
+    </main>
+
+</body>
 </html>
-cd ~/Desktop/aqua-landing
-
-git add .
-git commit -m "update logo"
-git push -u origin main
